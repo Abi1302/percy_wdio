@@ -1,16 +1,23 @@
-# example-webdriverio
-Example of how to integrate Percy visual tests with WebdriverIO.
+# demo-dashboard
 
-## Running the example
+A demo application to showcase the power of Percy with WebdriverIO SDK and BrowserStack Automate!
 
+Note: this repository is private and should not be shared because it is based on the spark-bootstrap-theme, which is closed source. Full license is here: https://themes.getbootstrap.com/licenses/.
+
+## Requirements
+
+- NodeJS (https://nodejs.org/)
+- Hub (https://hub.github.com/)
+
+## Installation
+
+1. Open your console.
+2. Navigate to the root folder.
+3. Run `npm install` to install the testing dependencies.
+
+## Create a new demo PR
+
+Run:
 ```bash
-$ npm install
-$ PERCY_TOKEN=... npm test
-
-$ git clone https://github.com/percy/example-webdriverio.git
-$ cd example-webdriverio/
-
-$ export PERCY_TOKEN=...
-$ npm install
-$ npm test
+./create-demo-pr.sh
 ```
