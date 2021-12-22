@@ -1,7 +1,6 @@
 const assert = require('assert')
 const httpServer = require('http-server')
 const { percySnapshot } = require('@percy/webdriverio');
-const sync = require('@wdio/sync').default
 
 describe('example page', function() {
   const PORT = 8000
@@ -10,15 +9,15 @@ describe('example page', function() {
 
   let server = null
 
-  before(function() {
+  before(async function() {
     // Start local server to host app under test.
     server = httpServer.createServer({ root: `${__dirname}/../assets` })
     server.listen(PORT)
   })
 
-  after(function() {
+  after(async function() {
     // Shut down the HTTP server.
-    server.close()
+    await server.close()
   })
 
   it('should load web application pages', async function () {
@@ -28,7 +27,7 @@ describe('example page', function() {
 
     var element = await $('#signup-email')
     await element.setValue("test@percy.io")
-    await browser.execute(() => { $('#signup-submit').click() });
+    await browser.execute(async () => { await $('#signup-submit').click() });
     await percySnapshot(browser, 'Signup Page Validation', {widths: TEST_WIDTHS});
 
     await browser.url(`${URL}/login`);
@@ -59,25 +58,25 @@ describe('example page', function() {
     await browser.execute(() => { $('#calendar-toggle').click() });
 
     element = await $('#nav-profile-menu')
-    element.click();
+    await element.click();
 
     await percySnapshot(browser, 'Profile Menu', {widths: TEST_WIDTHS});
 
     // reset Page
     element = await $('#nav-profile-menu')
-    element.click();
+    await element.click();
 
     element = await $('#nav-messages-menu')
-    element.click();
+    await element.click();
 
     await percySnapshot(browser, 'Messages Menu', {widths: TEST_WIDTHS});
 
     // reset page
     element = await $('#nav-messages-menu')
-    element.click();
+    await element.click();
 
     element = await $('#nav-tasks-menu')
-    element.click();
+    await element.click();
 
     await percySnapshot(browser, 'Tasks Menu', {widths: TEST_WIDTHS});
 
