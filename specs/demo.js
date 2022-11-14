@@ -3,7 +3,7 @@ const httpServer = require('http-server')
 const { percySnapshot } = require('@percy/webdriverio');
 
 describe('example page', function() {
-  const PORT = 8000
+  const PORT = 8001
   const URL = `http://localhost:${PORT}`
   const TEST_WIDTHS = [375, 768, 1280];
 
