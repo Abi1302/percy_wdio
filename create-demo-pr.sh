@@ -9,8 +9,8 @@ fi
 
 
 NOW=`date +%d%H%M%S`
-BASE_BRANCH="master-$NOW"
-BRANCH="update-button-$NOW"
+BASE_BRANCH="develop-$NOW"
+BRANCH="feature-$NOW"
 if [ ${CI_USER_ID} != '' ]
 then
   BASE_BRANCH=${CI_USER_ID}_${BASE_BRANCH}
