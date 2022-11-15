@@ -7,7 +7,7 @@ var Page = {
   				center: 'title',
   				right: 'month,basicWeek,basicDay'
   			},
-  			defaultDate: '2016-09-12',
+  			defaultDate: '2016-09-13',
   			navLinks: true, // can click day/week names to navigate views
   			editable: true,
   			eventLimit: true, // allow "more" link when too many events

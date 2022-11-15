@@ -10,3 +10,4 @@ var Page = {
 		this.createTooltips();
 	}
 }
+//
